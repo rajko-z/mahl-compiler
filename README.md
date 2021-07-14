@@ -1,6 +1,6 @@
 # mahl-compiler
 
-This was a project at the Faculty of Technical Sciences in the subject System Software
+This was a project at the Faculty of Technical Sciences, subject: System Software.
 The theme of the project is the MAHL compiler (high level mips assembler). Mahl is a tool that
 translates a program written in a higher assembly language into a basic assembly language. Senior MIPS
 The 32bit assembly language serves easier assembly programming because it introduces the concept of a registry
