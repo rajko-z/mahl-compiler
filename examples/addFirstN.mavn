@@ -1,0 +1,39 @@
+// program sabira prvih n brojeva
+
+_mem m222 10;  // m222 je n
+_mem m111 55;  // m111 je ocekivan rezultat
+
+_reg r0;   // povratna greska, 0 sve ok, 1 nije
+_reg r3;
+_reg r1;
+_reg r2;
+_reg r100; // u r100 ide rezultat jer zasto da ne
+_reg r101; // rez koji treba da se dobije
+
+_func main;
+	la r2, m222;
+	lw r1, 0(r2);
+	li r2, 1;
+	li r3, 0;
+	li r100, 0;
+loop:
+	add r100, r100, r1;   // r100 plus r1
+decreasen:
+	sub r1, r1, r2;           // r1 minus 1
+	beq r1, r3, checkresult;  // if r1 jednako sa 0 go to checkresult
+	b loop;		          // else  go to loop
+checkresult:
+	nop;  // mal nopova
+	nop;
+	nop;
+	li r0, 0;
+	la r3, m111;         
+	lw r101, 0(r3);     // r101 je ocekivani rez 
+	beq r100, r101, sveok;
+jbgnevalja:	
+	li r0, 1;  
+sveok:
+	and r0, r0, r2;     // ako je sve ok rez u r0 je 0, inace je 1
+	nop;
+	nop;
+	nop;  // jos mal nopova
